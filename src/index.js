@@ -3,16 +3,16 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-import TicTacToe from "./TicTacToe";
 import {Provider} from "react-redux";
 import store from "./redux/store";
+import TicTacToe from "./TicTacToe";
 
 ReactDOM.render(
-    <Provider store={store}>
-        <React.StrictMode>
+    <React.StrictMode>
+        <Provider store={store}>
             <TicTacToe/>
-        </React.StrictMode>
-    </Provider>,
+        </Provider>
+    </React.StrictMode>,
     document.getElementById('root')
 );
 

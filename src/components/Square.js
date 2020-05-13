@@ -1,25 +1,34 @@
-import React from "react"
-import "../App.css"
+import React from "react";
 import {connect} from "react-redux";
 import {click} from "../redux/actions";
 
-function Square(props) {
+export default function Square({status, ...restProps}) {
 
-    const active = !props.value
-    const onClick = active ? () => props.click(props.id) : undefined
-
+    const active = status === 'active' && !restProps.value
     return (
-        <div className={`square ${active ? "active" : ""}`}
-             onClick={onClick}>
+        <>
+            {active ?
+                <ActionSquare {...restProps}/>
+                :
+                <BaseSquare value={restProps.value} winner={status === 'winner'}/>
+            }
+        </>)
+}
+
+const BaseSquare = ({value, winner}) => (
+    <div className={`square ${winner ? "winner" : ""}`}>
+        {value}
+    </div>
+)
+
+
+const ActionSquare = connect(null, {click})(props =>
+    (
+        <div className={`square active`}
+             onClick={() => props.click(props.id)}>
             {props.value}
         </div>
     )
-}
-
-const mapStateToProps = (state, ownProps) => (
-    {
-        value: state.fields[ownProps.id]
-    }
 )
 
-export default connect(mapStateToProps, {click})(Square)
+

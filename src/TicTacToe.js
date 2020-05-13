@@ -1,37 +1,33 @@
 import React from "react";
-import Square from "./components/Square";
-import {side} from "./config.js"
-import {click} from "./redux/actions";
+import Field from "./components/Field";
 import {connect} from "react-redux";
-
+import Arrow from "./components/Arrow";
+import Top from "./components/Top";
 
 function TicTacToe(props) {
-    const range = [...Array(side).keys()]
     return (
-        <div className="flex-container">
-            {range.map(col =>
-                <div key={col} id={`col${col}`}>
-                    {range.map(row => {
-                            const id = `field${row}${col}`
-                            return (
-                                <Square key={id}
-                                        id={id}
-                                        pos={{row: row, col: col}}
-                                    // value={props.fields[id]}
-                                />
-                            )
-                        }
-                    )}
-                </div>
-            )}
-        </div>
-
+        <>
+            <Top/>
+            <Field field={props.history[0]} winningSquares={props.winningSquares}/>
+            <div className="info">Log:</div>
+            <div className="flex-container">
+                {props.history.slice(1).map((field, index) => (
+                    <React.Fragment key={index}>
+                        {!!index && <Arrow/>}
+                        <Field field={field} history/>
+                    </React.Fragment>
+                ))}
+            </div>
+        </>
     )
 
 }
 
-// const mapStateToProps = ({fields}) => ({fields})
-//
-// export default connect(mapStateToProps)(TicTacToe)
+const mapStateToProps = state => (
+    {
+        history: state.history,
+        winningSquares: state.winningSquares
+    }
+)
 
-export default TicTacToe
+export default connect(mapStateToProps)(TicTacToe)
