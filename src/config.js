@@ -1,12 +1,2 @@
-export const side = 3
-
-// const indexes = Array.from(Array(side ** 2).keys()).map(a => {
-//     const row = Math.floor(a / side)
-//     const col = a % side
-//     })
-
-// const emptyFields = indexes
-//     .reduce((acc, cur) => ({...acc, [`field${Math.floor(cur / side)}${cur % side}`]: {}}), {})
-
-
-export const range = [...Array(side).keys()]
+export const SIDE = 3
+export const RANGE = [...Array(SIDE).keys()]

@@ -1,15 +1,15 @@
 import React from "react";
-import {range, side} from "../config.js"
+import {RANGE, SIDE} from "../config.js"
 import Square from "./Square";
 
 
 export default function Field(props) {
     return (
         <div className={props.history ? "history" : "main-field"}>
-            {range.map(row =>
+            {RANGE.map(row =>
                 <div key={row} className="row">
-                    {range.map(col => {
-                            const id = side * row + col
+                    {RANGE.map(col => {
+                            const id = SIDE * row + col
                             let status
                             if (props.history) status = 'base'
                             else if (props.winningSquares.length) status = props.winningSquares.includes(id) ? 'winner' : 'base'

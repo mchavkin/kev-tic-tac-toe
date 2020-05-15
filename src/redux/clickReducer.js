@@ -1,7 +1,7 @@
-import {side} from "../config.js"
+import {SIDE} from "../config.js"
 import {CLICK, NEW_GAME} from "./actionTypes";
 
-const totalSquares = side ** 2
+const totalSquares = SIDE ** 2
 
 const initialState = {
     history: [Array(totalSquares)],

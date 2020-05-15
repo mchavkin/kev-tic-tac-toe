@@ -3,6 +3,7 @@ import Field from "./components/Field";
 import {connect} from "react-redux";
 import Arrow from "./components/Arrow";
 import Top from "./components/Top";
+import './App.css';
 
 function TicTacToe(props) {
     return (
