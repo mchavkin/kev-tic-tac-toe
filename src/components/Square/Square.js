@@ -1,6 +1,6 @@
 import React from "react";
 import {connect} from "react-redux";
-import {click} from "../redux/actions";
+import {click} from "../../redux/actions";
 
 export default function Square({status, ...restProps}) {
 
@@ -16,7 +16,7 @@ export default function Square({status, ...restProps}) {
 }
 
 const BaseSquare = ({value, winner}) => (
-    <div className={`square ${winner ? "winner" : ""}`}>
+    <div data-testid ="base-square" className={`square ${winner ? "winner" : ""}`}>
         {value}
     </div>
 )
@@ -24,7 +24,7 @@ const BaseSquare = ({value, winner}) => (
 
 const ActionSquare = connect(null, {click})(props =>
     (
-        <div className={`square active`}
+        <div data-testid ="action-square" className={`square active`}
              onClick={() => props.click(props.id)}>
             {props.value}
         </div>

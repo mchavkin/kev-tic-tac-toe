@@ -1,13 +1,13 @@
 import React from "react";
-import {RANGE, SIDE} from "../config.js"
-import Square from "./Square";
+import {RANGE, SIDE} from "../../config.js"
+import Square from "../Square/Square";
 
 
 export default function Field(props) {
     return (
         <div className={props.history ? "history" : "main-field"}>
             {RANGE.map(row =>
-                <div key={row} className="row">
+                <div key={row} className="row" data-testid ="row">
                     {RANGE.map(col => {
                             const id = SIDE * row + col
                             let status

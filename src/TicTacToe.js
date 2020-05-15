@@ -1,8 +1,8 @@
 import React from "react";
-import Field from "./components/Field";
+import Field from "./components/Field/Field";
 import {connect} from "react-redux";
 import Arrow from "./components/Arrow";
-import Top from "./components/Top";
+import Top from "./components/Top/Top";
 import './App.css';
 
 function TicTacToe(props) {
