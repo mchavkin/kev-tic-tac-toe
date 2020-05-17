@@ -1,10 +1,10 @@
-import React from 'react';
-import {cleanup, render, fireEvent} from '@testing-library/react';
-import {Provider} from "react-redux";
+import React from 'react'
+import {cleanup, render, fireEvent} from '@testing-library/react'
+import {Provider} from "react-redux"
 import '@testing-library/jest-dom/extend-expect'
-import {createStore} from "redux";
-import clickReducer from "../../redux/clickReducer";
-import Top from "./Top";
+import {createStore} from "redux"
+import clickReducer from "../../redux/clickReducer"
+import Top from "./Top"
 
 
 const testStore = createStore(clickReducer,
@@ -20,7 +20,7 @@ const TestTop = (props) =>
         <Top {...props}/>
     </Provider>
 
-afterEach(cleanup);
+afterEach(cleanup)
 
 it("should show 'O' as a winner", () =>{
     const {getByTestId} = render(<TestTop/>)

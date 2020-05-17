@@ -1,9 +1,9 @@
-import React from "react";
-import Field from "./components/Field/Field";
-import {connect} from "react-redux";
-import Arrow from "./components/Arrow/Arrow";
-import Top from "./components/Top/Top";
-import './TicTacToe.css';
+import React from "react"
+import Field from "./components/Field/Field"
+import {connect} from "react-redux"
+import Arrow from "./components/Arrow/Arrow"
+import Top from "./components/Top/Top"
+import './TicTacToe.css'
 
 function TicTacToe(props) {
     return (

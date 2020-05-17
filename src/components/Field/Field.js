@@ -1,6 +1,6 @@
-import React from "react";
+import React from "react"
 import {RANGE, SIDE} from "../../config.js"
-import Square from "../Square/Square";
+import Square from "../Square/Square"
 
 
 export default function Field(props) {

@@ -1,6 +1,6 @@
-import React from "react";
-import {connect} from "react-redux";
-import {newGame} from "../../redux/actions";
+import React from "react"
+import {connect} from "react-redux"
+import {newGame} from "../../redux/actions"
 
 function Top(props) {
     return (

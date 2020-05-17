@@ -1,6 +1,6 @@
-import React from "react";
-import {connect} from "react-redux";
-import {click} from "../../redux/actions";
+import React from "react"
+import {connect} from "react-redux"
+import {click} from "../../redux/actions"
 
 export default function Square({status, ...restProps}) {
 

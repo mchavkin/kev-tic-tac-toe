@@ -1,5 +1,5 @@
 import {SIDE} from "../config.js"
-import {CLICK, NEW_GAME} from "./actionTypes";
+import {CLICK, NEW_GAME} from "./actionTypes"
 
 const totalSquares = SIDE ** 2
 
